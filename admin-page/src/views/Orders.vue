@@ -21,9 +21,9 @@
                     
                      <tr class="bg-gray-200" v-for="(order, index) in orders" :key="index">
                           <td  class="w-1/1 text-left py-4 px-4">{{(index+1)}}</td>
-                          <td  class="w-1/3 text-left py-4 px-4">{{order['createdAt']}}</td>
+                          <td  class="w-1/3 text-left py-4 px-4">{{ formatDate(order['createdAt']) }}</td>
                           <td  class="w-1/3 text-left py-4 px-4">{{order['paymentHeader']}}</td>
-                          <td  class="w-1/3 text-left py-4 px-4">{{order['Order']['totalPayment']}}</td>
+                          <td  class="w-1/3 text-left py-4 px-4">{{ order['Order']['totalPayment']  | toCurrency}}</td>
                           <td  class="w-1/3 text-left py-4 px-4">{{order['status']}}</td>
 
                           <td>
@@ -43,7 +43,7 @@
 
 <script>
 import { mapState} from 'vuex'
-
+import moment from 'moment';
 export default {
     computed: {
         ...mapState({
@@ -57,6 +57,9 @@ export default {
           this.$store.dispatch('orders/delete', order);
           this.$store.dispatch('snackbar/setSnackbar', {text: `successfully deleted order`});
         }
+      },
+      formatDate(date){
+        return moment(date).format('YYYY-MM-DD')
       }
     }
     

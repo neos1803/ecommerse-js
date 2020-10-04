@@ -30,7 +30,7 @@
                           <td  class="w-1/1 text-left py-4 px-4">{{(index+1)}}</td>
                           <td  class="w-1/3 text-left py-4 px-4">{{product['name']}}</td>
                           <td  class="w-1/3 text-left py-4 px-4">{{product['stock']}}</td>
-                          <td  class="w-1/3 text-left py-4 px-4">{{product['price']}}</td>
+                          <td  class="w-1/3 text-left py-4 px-4">{{product['price'] | toCurrency }}</td>
                           <td  class="w-1/3 text-left py-4 px-4">{{product['weight']}}</td>
                           <td  class="w-1/3 text-left py-4 px-4">{{product['tags']}}</td>
                           <td  class="w-1/3 text-left py-4 px-4">{{product['description']}}</td>

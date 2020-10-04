@@ -2,11 +2,11 @@ const router = require('express').Router()
 const orderController = require('../controllers/OrderController')
 const auth = require('../middleware/auth')
 
-router.post('/', auth, orderController.create)
+router.post('/', orderController.create)
 router.post('/webhook', orderController.update)
 router.put('/:id', orderController.updateStatus)
-router.get('/', auth, orderController.show)
-router.get('/:id', auth, orderController.find)
-router.delete('/:id', auth, orderController.delete)
+router.get('/', orderController.show)
+router.get('/:id', orderController.find)
+router.delete('/:id', orderController.delete)
 
 module.exports = router

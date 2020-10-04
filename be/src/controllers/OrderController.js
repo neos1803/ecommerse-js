@@ -8,8 +8,11 @@ const pagination = require('../helpers/pagination')
 class Controller {
     static async create(req, res) {
         try {
+            
+            console.log("ORDER MASUK",req.body)
+            console.log("ORDER MASUK",req.body.user_id)
             const order = await models.Order.create({
-                userId: req.user_id,
+                userId: req.body.user_id,
                 discountId: req.body.data.discountId,
                 courierName: req.body.data.courierName,
                 courierService: req.body.data.courierService,
@@ -29,9 +32,9 @@ class Controller {
                 })
             })
 
-            const user = await models.User.findByPk(req.user_id)
+            const user = await models.User.findByPk(req.body.user_id)
             const admin = await models.Admin.findByPk(req.body.data.items[0].adminId)
-
+            console.log('user',req.body.data.items)
             const parameter = {
                 "payment_type": "bank_transfer",
                 

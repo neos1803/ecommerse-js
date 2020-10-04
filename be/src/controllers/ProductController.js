@@ -179,7 +179,7 @@ class Controller {
 
     static async show(req, res) {
         const count = await models.Product.count()
-
+        
         const page = pagination({
             limit: req.query.limit,
             page: parseInt(req.query.page),
