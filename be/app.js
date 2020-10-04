@@ -18,7 +18,7 @@ const orderRoute = require('./src/routes/order')
 const searchRoute = require('./src/routes/search')
 const discountRoute = require('./src/routes/discount')
 // const checkoutRoute = require('./src/routes/checkout')
-const auth = require('./src/middleware/auth')
+// const auth = require('./src/middleware/auth')
 // const taskScheduler = require("./helpers/taskScheduler");
 
 app.use(cors());
