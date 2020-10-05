@@ -55,7 +55,7 @@ export default {
     },
     async login({commit}, loginInfo) {
       try {
-        console.log("TOKEN: ",loginInfo)
+        // console.log("TOKEN: ",loginInfo)
         let response = await Api.post('/auth/login', { data: loginInfo });
         if(typeof(response.error) == 'undefined'){
             let {token} = response.data.data;
