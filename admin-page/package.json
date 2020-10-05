@@ -8,8 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js",
-    "postinstall":"npm install && npm run build"
+    "start": "node server.js"
   },
   "main": "babel.config.js",
   "dependencies": {
